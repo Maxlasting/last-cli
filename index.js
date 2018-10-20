@@ -92,7 +92,7 @@ const installPromise = (name) => new Promise(async (resolve, reject) => {
 
 program
 
-  .version('0.0.1', '-v, --version')
+  .version('0.0.5', '-v, --version')
 
   .command('init [query] <name>')
 
