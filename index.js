@@ -92,11 +92,9 @@ const installPromise = (name) => new Promise(async (resolve, reject) => {
 
 program
 
-  .version('0.0.5', '-v, --version')
+  .version('0.0.6', '-v, --version')
 
   .command('init [query] <name>')
-
-  .option('vue-ssr')
 
   .action( async (query, name) => {
     if (!fs.existsSync(name)) {
