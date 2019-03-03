@@ -1,11 +1,11 @@
 {
   "name": "last-cli",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "The best cli tools!",
   "keyword": "node vue ssr spa",
   "main": "index.js",
   "bin": {
-    "F": "index.js"
+    "FQ": "index.js"
   },
   "author": "Fq",
   "license": "ISC",

@@ -11,8 +11,9 @@ const shell = require('shelljs')
 
 const registry = {
   'vue-ssr': 'https://github.com:Maxlasting/vue-ssr-template#master',
-  'vue-spa': 'https://github.com:Maxlasting/vue-www-template#master',
-  'koa': 'https://github.com:Maxlasting/last-koa-template#master'
+  'vue': 'https://github.com:Maxlasting/vue-www-template#master',
+  'koa': 'https://github.com:Maxlasting/last-koa-template#master',
+  'react': 'https://github.com:Maxlasting/react-www-template#master'
 }
 
 const initCommands = [
@@ -29,7 +30,7 @@ const initCommands = [
 const installCommands = {
   type: 'confirm',
   name: 'ifInstall',
-  message: 'Initialize git and install dependence now? (default: yes)',
+  message: 'Will you want to install dependence now? (default: yes)',
   default: true
 }
 
@@ -77,7 +78,7 @@ const installPromise = (name) => new Promise(async (resolve, reject) => {
 
   spinner.start()
 
-  shell.exec(`cd ${name} && git init && npm i`, (err, stdout, stderr) => {
+  shell.exec(`cd ${name} && npm i`, (err, stdout, stderr) => {
     if (err) {
       spinner.fail()
       console.log(symbols.error, chalk.red(err))
@@ -92,7 +93,7 @@ const installPromise = (name) => new Promise(async (resolve, reject) => {
 
 program
 
-  .version('0.0.6', '-v, --version')
+  .version('1.0.0', '-v, --version')
 
   .command('init [query] <name>')
 
