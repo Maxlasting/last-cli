@@ -13,19 +13,9 @@ const registry = {
   'vue-ssr': 'https://github.com:Maxlasting/vue-ssr-template#master',
   'vue': 'https://github.com:Maxlasting/vue-www-template#master',
   'koa': 'https://github.com:Maxlasting/last-koa-template#master',
-  'react': 'https://github.com:Maxlasting/react-www-template#master'
+  'react': 'https://github.com:Maxlasting/react-www-template#master',
+  'js': 'https://github.com:Maxlasting/javascript-template#master'
 }
-
-const initCommands = [
-  {
-    name: 'description',
-    message: 'entry description of project'
-  },
-  {
-    name: 'author',
-    message: 'entry author of project'
-  }
-]
 
 const installCommands = {
   type: 'confirm',
@@ -35,7 +25,6 @@ const installCommands = {
 }
 
 const downloadPromise = (url, name, options = { clone: true }) => new Promise(async (resolve, reject) => {
-  const answers = await inquirer.prompt(initCommands)
   const spinner = ora('download template ...')
 
   spinner.start()
@@ -52,9 +41,7 @@ const downloadPromise = (url, name, options = { clone: true }) => new Promise(as
     const fileName = `${name}/package.json`
 
     const meta = {
-      name,
-      description: answers.description,
-      author: answers.author
+      name
     }
 
     if (fs.existsSync(fileName)) {
@@ -93,7 +80,7 @@ const installPromise = (name) => new Promise(async (resolve, reject) => {
 
 program
 
-  .version('1.0.0', '-v, --version')
+  .version('1.1.1', '-v, --version')
 
   .command('init [query] <name>')
 

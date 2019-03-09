@@ -9,11 +9,15 @@ npm i -g last-cli
 使用：
 
 ```
-F init vue-ssr [project-name]
+FQ init vue-ssr [project-name]
 
-F init vue-spa [project-name]
+FQ init vue [project-name]
 
-F init koa [project-name]
+FQ init koa [project-name]
+
+FQ init react [project-name]
+
+FQ init js [project-name]
 ```
 
 谢谢使用～
